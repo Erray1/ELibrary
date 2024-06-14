@@ -25,7 +25,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELibrary.Blazor", "ELibrary
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELibrary.Blazor.Client", "ELibrary.Blazor\ELibrary.Blazor.Client\ELibrary.Blazor.Client.csproj", "{740B46CC-A529-4A45-82F3-F6343633C17A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELibrary.Gateway", "ELibrary.Gateway\ELibrary.Gateway.csproj", "{BD3D6F64-A4DB-487B-9B81-6892131EC318}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ELibrary.Gateway", "ELibrary.Gateway\ELibrary.Gateway.csproj", "{BD3D6F64-A4DB-487B-9B81-6892131EC318}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{564DB3C5-53CE-4D8C-89A9-931770B84E1D}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
