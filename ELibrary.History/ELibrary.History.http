@@ -1,0 +1,6 @@
+@ELibrary.History_HostAddress = http://localhost:5002
+
+GET {{ELibrary.History_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

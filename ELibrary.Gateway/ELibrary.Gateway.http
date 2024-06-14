@@ -1,0 +1,6 @@
+@ELibrary.Gateway_HostAddress = http://localhost:5037
+
+GET {{ELibrary.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

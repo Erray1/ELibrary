@@ -1,0 +1,27 @@
+﻿@using ELibrary.Blazor.Client.Pages.Components.Account
+@using ELibrary.Shared.Dto.Account
+@using ELibrary.Shared.Dto.Temp
+@page "/account"
+
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h2>
+                @AccountData.Name
+            </h2>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 break">
+            Красивая хуета
+        </div>
+    </div>
+    <BooksSummary 
+        TakenBooks="@AccountData.TakenBooks"
+        BookedBooks="@AccountData.BookedBooks"/>
+</div>
+
+@code {
+    private AccountDto AccountData = DtoExtensions.Test();
+}

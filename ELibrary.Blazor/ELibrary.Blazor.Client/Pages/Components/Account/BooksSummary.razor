@@ -1,0 +1,100 @@
+﻿@using ELibrary.Shared.Dto.Account
+<div class="book-data"
+    <div class="row">
+        <div class="col">
+            <h2 class="section-title">
+                Книги на руках
+            </h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Авторы</th>
+                    <th scope="col">Библиотека</th>
+                    <th scope="col">Время получения</th>
+                    <th scope="col">Дата сдачи</th>
+                </tr>
+            </thead>
+            @for (int i = 0; i < 5; i++)
+            {
+
+                var book = TakenBooks.ElementAtOrDefault(i);
+                    <tr>
+                    @if (book is null)
+                    {
+                                        <div class="empty-row">
+
+                                        </div>
+                    }
+                    else
+                    {
+                                        <td>@i</td>
+                                        <td>@book.Name</td>
+                                        <td>@String.Join(", ", book.Authors)</td>
+                                        <td>@book.LibraryName</td>
+                                        <td>@book.RecieveTime</td>
+                                        <td>@book.ExpirationDate</td>
+                    }
+                    </tr>
+
+            }
+
+        </table>
+    </div>
+    <div class="row"
+        <div class="col">
+            <h2 class="section-title">
+                Забронированные книги
+            </h2>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Авторы</th>
+                    <th scope="col">Библиотека</th>
+                    <th scope="col">Статус</th>
+                    <th scope="col">Дата окончания</th>
+                    <th scope="col">Отменить бронь</th>
+                </tr>
+            </thead>
+            @for (int i = 0; i < 5; i++)
+            {
+
+                var book = BookedBooks.ElementAtOrDefault(i);
+                        <tr>
+                    @if (book is null)
+                    {
+                        <div class="empty-row">
+                        </div>                            
+                    }
+                    else
+                    {
+                        <td>@i</td>
+                        <td>@book.Name</td>
+                        <td>@String.Join(", ", book.Authors)</td>
+                        <td>@book.LibraryName</td>
+                        <td>@book.Status</td>
+                        <td>@book.ExpirationDate</td>
+                        <td>АТМЕНИТЬ БЛЯТЬ</td>
+                    }
+                        </tr>
+
+            }
+
+        </table>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public List<TakenBook> TakenBooks { get; set; }
+
+    [Parameter]
+    public List<BookedBook> BookedBooks { get; set; }
+}

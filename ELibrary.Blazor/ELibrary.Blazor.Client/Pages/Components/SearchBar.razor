@@ -1,0 +1,48 @@
+﻿@using ELibrary.Shared.Dto
+@using ELibrary.Shared.Dto.Requests
+
+<div class="Card">
+    <EditForm Model="@Model">
+    <div class="selectors">
+        
+            <label>Зона поиска</label>
+            <InputSelect @bind-Value="@Model.LibrarySearchRule">
+                <option value="MyLibrary">Моя библиотека</option>
+                <option value="AllLibraries">Все библиотеки</option>
+            </InputSelect>
+            <label>Искать только свободные</label>
+            <InputCheckbox @bind-Value="@Model.SearchForNotTakenRule" />
+    </div>
+    
+    <div class="CardInner">
+        <div class="container">
+            <div class="Icon" @onclick="async () => await Search()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+            </div>
+            <div class="InputContainer">
+              <InputText class="Input" @bind-Value="@Model.Query" placeholder="Война и мир!"/>
+            </div>
+        </div>
+    </div>
+    </EditForm>
+</div>
+@code {
+    private SearchRequest Model { get; set; } = new();
+    private async Task Search()
+    {
+        await OnValuesLoadingStateChanged.InvokeAsync();
+
+        // Загрузка
+        await Task.Delay(3000);
+        //
+
+        await OnValuesLoaded.InvokeAsync(new() { new(), new(), new(), new(), new() });
+        await OnValuesLoadingStateChanged.InvokeAsync();
+    }
+
+    [Parameter]
+    public EventCallback<List<BookShortDto>> OnValuesLoaded { get; set; }
+
+    [Parameter]
+    public EventCallback OnValuesLoadingStateChanged { get; set; }
+}

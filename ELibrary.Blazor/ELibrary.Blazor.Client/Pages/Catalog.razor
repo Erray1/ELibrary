@@ -1,0 +1,31 @@
+﻿@page "/catalog"
+
+<SearchBar OnValuesLoaded="ChangeBooks" OnValuesLoadingStateChanged="ChangeLoadingState"/>
+@if (loadingValues)
+{
+    <p>Загрузка ёпта ждите</p>
+}
+else if (Books.Count != 0)
+{
+@*     <TestBlock /> *@
+    <BookBlock 
+        BlockSize="10"
+    Books="@Books"/>
+}
+else
+{
+    <p>Давай ищи пидор</p>
+}
+@code {
+    private bool loadingValues = false;
+    private List<BookShortDto> Books = new();
+    private async Task ChangeBooks(List<BookShortDto> newBooks)
+    {
+        Books = newBooks;
+    }
+    private void ChangeLoadingState()
+    {
+        Console.WriteLine("Наджата кнопка");
+        loadingValues = !loadingValues;
+    }
+}

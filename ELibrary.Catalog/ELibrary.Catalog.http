@@ -1,0 +1,6 @@
+@ELibrary.Catalog_HostAddress = http://localhost:5014
+
+GET {{ELibrary.Catalog_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

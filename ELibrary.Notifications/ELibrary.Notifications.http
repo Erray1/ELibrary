@@ -1,0 +1,6 @@
+@ELibrary.Notifications_HostAddress = http://localhost:5139
+
+GET {{ELibrary.Notifications_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

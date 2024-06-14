@@ -1,0 +1,24 @@
+﻿@using ELibrary.Blazor.Client.Pages.Components.Contractor
+@* @attribute [Authorize(Policy = "Contractor")] *@
+@page "/contractor"
+
+<div class="buttons-container">
+    <button class="open-window-button" @onclick="OpenNewOperationWindow">Новая операция</button>
+    <button class="open-window-button" @onclick="OpenAddNewBookWindow">Добавить книгу</button>
+</div>
+
+<OperationsBlock />
+
+<h3>Contractor</h3>
+
+@code {
+    private void OpenNewOperationWindow()
+    {
+
+    }
+
+    private void OpenAddNewBookWindow()
+    {
+        
+    }
+}

@@ -1,0 +1,8 @@
+﻿@page "/books/{bookId}"
+
+<h3>Book</h3>
+
+@code {
+    [SupplyParameterFromQuery]
+    string bookId { get; set; }
+}
