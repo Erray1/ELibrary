@@ -3,7 +3,7 @@
 <SearchBar OnValuesLoaded="ChangeBooks" OnValuesLoadingStateChanged="ChangeLoadingState"/>
 @if (loadingValues)
 {
-    <p>Загрузка ёпта ждите</p>
+    <p>Загрузка</p>
 }
 else if (Books.Count != 0)
 {
@@ -14,7 +14,7 @@ else if (Books.Count != 0)
 }
 else
 {
-    <p>Давай ищи пидор</p>
+    <p>Ищите книги по всем библиотекам Мира (нет)</p>
 }
 @code {
     private bool loadingValues = false;

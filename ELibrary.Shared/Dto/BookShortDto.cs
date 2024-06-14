@@ -9,13 +9,13 @@ namespace ELibrary.Shared.Dto
     public class BookShortDto
     {
 		public string BookId { get; set; } = "1";
-		public List<string> Authors { get; set; } = new() { "Пелевин ёпта" };
+		public List<string> Authors { get; set; } = new() { "Пелевин" };
 
         public string BookName { get; set; } = "Поколение П";
-        public string Description { get; set; } = "Ахуенная книга";
-        public List<string> CategoryName { get; set; } = new() { "Опизденчик" };
+        public string Description { get; set; } = "Отличная книга";
+        public List<string> CategoryName { get; set; } = new() { "Постмодернизм" };
 
-        public int YearWritten { get; set; } = 33;
+        public int YearWritten { get; set; } = 1999;
 
         public string ImageName { get; set; } = "pelevin.png";
         public string ImageURL => Path.Combine("img", ImageName);
